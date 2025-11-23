@@ -186,8 +186,6 @@ details summary{background:linear-gradient(90deg,var(--accent),#36b0ff);color:#f
         <tr><td>Signals & Systems</td><td>6</td><td>2026-01-16</td><td>2026-01-21</td></tr>
         <tr><td>EMF</td><td>6</td><td>2026-01-22</td><td>2026-01-27</td></tr>
         <tr><td>Measurements</td><td>3</td><td>2026-01-28</td><td>2026-01-30</td></tr>
-        <tr><td>Engineering Mathematics</td><td>2</td><td>2026-01-31</td><td>2026-02-01</td></tr>
-        <tr><td>Aptitude</td><td>1</td><td>2026-02-02</td><td>2026-02-02</td></tr>
       </tbody>
     </table>
   </div>
@@ -246,17 +244,6 @@ details summary{background:linear-gradient(90deg,var(--accent),#36b0ff);color:#f
       <table class="table" id="topic-Measurements"><thead><tr><th>Subtopic</th><th style="width:90px">Important</th><th style="width:100px">Completed</th><th style="width:100px">Revised</th><th style="width:110px">Practiced</th><th style="width:120px">Target Date</th><th style="width:130px">Rev 1</th><th style="width:130px">Final Rev</th><th>Notes</th></tr></thead><tbody></tbody></table>
     </details>
 
-    <!-- Engineering Mathematics -->
-    <details open class="details">
-      <summary><b>Engineering Mathematics</b></summary>
-      <table class="table" id="topic-Engineering Mathematics"><thead><tr><th>Subtopic</th><th style="width:90px">Important</th><th style="width:100px">Completed</th><th style="width:100px">Revised</th><th style="width:110px">Practiced</th><th style="width:120px">Target Date</th><th style="width:130px">Rev 1</th><th style="width:130px">Final Rev</th><th>Notes</th></tr></thead><tbody></tbody></table>
-    </details>
-
-    <!-- Aptitude -->
-    <details open class="details">
-      <summary><b>Aptitude</b></summary>
-      <table class="table" id="topic-Aptitude"><thead><tr><th>Subtopic</th><th style="width:90px">Important</th><th style="width:100px">Completed</th><th style="width:100px">Revised</th><th style="width:110px">Practiced</th><th style="width:120px">Target Date</th><th style="width:130px">Rev 1</th><th style="width:130px">Final Rev</th><th>Notes</th></tr></thead><tbody></tbody></table>
-    </details>
 
   </div>
 
@@ -264,7 +251,7 @@ details summary{background:linear-gradient(90deg,var(--accent),#36b0ff);color:#f
     <h3 style="margin:0 0 8px">Controls & Notes</h3>
     <ul>
       <li>Study window: <b>Nov 25, 2025 → Feb 02, 2026</b>. Final revision window: <b>Feb 03 → Feb 13, 2026</b>.</li>
-      <li>Tracker tailored for <b>GATE EEE</b>: Power Systems, Electrical Machines, Networks, Control Systems, Power Electronics & Drives, Signals & Systems, EMF, Measurements, Engineering Mathematics, General Aptitude.</li>
+      <li>Tracker tailored for <b>GATE EEE</b>: Power Systems, Electrical Machines, Networks, Control Systems, Power Electronics & Drives, Signals & Systems, EMF, Measurements .</li>
       <li>Dates are assigned automatically and saved locally in your browser. Use Export/Import to move progress between devices.</li>
     </ul>
   </div>
@@ -365,22 +352,6 @@ window.MEAS = [
   'Error analysis, calibration methods & uncertainty estimation'
 ];
 
-window.MATH = [
-  'Linear algebra: matrices, rank, eigenvalues',
-  'Calculus: multivariable, Taylor, Jacobian',
-  'ODEs & PDEs: solving methods & examples',
-  'Probability & random variables basics',
-  'Numerical methods: root finding & integration',
-  'Vector calculus: divergence, curl, Green/Stokes/Gauss'
-];
-
-window.APT = [
-  'Verbal: para jumbles, comprehension strategies',
-  'Quant: number systems, ratios, algebra tricks',
-  'Reasoning: series, coding-decoding, puzzles',
-  'DI: tables, graphs, caselets and speed tips',
-  'Time management & exam strategy for GA'
-];
 
 /* -------------------------
    IMPORTANCE (0,1,2) — lengths must match subtopic arrays above
@@ -394,8 +365,7 @@ const IMPORTANCE = {
   'Signals & Systems':   [1,1,2,2,1,1,1],
   'EMF':                 [1,1,1,1,2,1],
   'Measurements':        [2,2,1,1,1,1],
-  'Engineering Mathematics':[2,2,2,1,1,1],
-  'Aptitude':            [1,1,1,1,1]
+
 };
 
 /* -------------------------
@@ -417,8 +387,7 @@ const amplitude = {
   'Signals & Systems': 6,
   'EMF': 6,
   'Measurements': 3,          // <-- added schedule days for Measurements
-  'Engineering Mathematics': 2,
-  'Aptitude': 1
+
 };
 
 /* storage prefix & helpers */
@@ -440,8 +409,7 @@ function topicKeyFromSummary(summary){
   if (s.includes('signals')) return 'Signals & Systems';
   if (s.includes('electromagnetic') || s.includes('emf')) return 'EMF';
   if (s.includes('measurement') || s.includes('instrument')) return 'Measurements';
-  if (s.includes('engineering mathematics') || s.includes('math')) return 'Engineering Mathematics';
-  if (s.includes('aptitude') || s.includes('general aptitude')) return 'Aptitude';
+
   return summary;
 }
 
@@ -488,8 +456,6 @@ function allSchedulableEntries(){
     ['Signals & Systems', window.SS || []],
     ['EMF', window.EMF || []],
     ['Measurements', window.MEAS || []],
-    ['Engineering Mathematics', window.MATH || []],
-    ['Aptitude', window.APT || []]
   ];
   const out=[];
   groups.forEach(g=>{
@@ -734,8 +700,6 @@ function importCSVFile(file){
       ['Signals & Systems', window.SS || []],
       ['EMF', window.EMF || []],
       ['Measurements', window.MEAS || []],
-      ['Engineering Mathematics', window.MATH || []],
-      ['Aptitude', window.APT || []]
     ];
     groups.forEach(g=> renderTopicArray(g[0], g[1]));
     updateSummary();
@@ -787,8 +751,7 @@ window.addEventListener('load', ()=>{
     ['Signals & Systems', window.SS || []],
     ['EMF', window.EMF || []],
     ['Measurements', window.MEAS || []],
-    ['Engineering Mathematics', window.MATH || []],
-    ['Aptitude', window.APT || []]
+
   ];
   groups.forEach(g=> renderTopicArray(g[0], g[1]));
 
