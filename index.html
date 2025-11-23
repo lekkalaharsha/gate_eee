@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>GATE EEE Tracker — Power Systems → Machines</title>
+<title>GATE EEE Tracker — Power Systems → Machines (Updated weightage)</title>
 <style>
 :root{
   --accent:#0078d7; --bg:#f6f9fa; --card:#fff; --border:#d0d3db; --text:#222;
@@ -76,14 +76,14 @@ details summary{background:linear-gradient(90deg,var(--accent),#36b0ff);color:#f
     <table class="table">
       <thead><tr><th>Subject</th><th>Start Date</th><th>End Date</th></tr></thead>
       <tbody>
-        <tr><td>Power Systems</td><td>2025-11-25</td><td>2025-12-08</td></tr>
-        <tr><td>Electrical Machines</td><td>2025-12-09</td><td>2025-12-20</td></tr>
-        <tr><td>Networks</td><td>2025-12-21</td><td>2025-12-30</td></tr>
-        <tr><td>Power Electronics</td><td>2025-12-31</td><td>2026-01-07</td></tr>
-        <tr><td>Control Systems</td><td>2026-01-08</td><td>2026-01-15</td></tr>
-        <tr><td>Signals & Systems</td><td>2026-01-16</td><td>2026-01-21</td></tr>
-        <tr><td>EMF / EMI</td><td>2026-01-22</td><td>2026-01-27</td></tr>
-        <tr><td>Catch-up & Weak-area polish</td><td>2026-01-28</td><td>2026-02-02</td></tr>
+        <tr><td>Power Systems</td><td>2025-11-25</td><td>2025-12-10</td></tr>
+        <tr><td>Electrical Machines</td><td>2025-12-11</td><td>2025-12-23</td></tr>
+        <tr><td>Networks</td><td>2025-12-24</td><td>2026-01-01</td></tr>
+        <tr><td>Power Electronics</td><td>2026-01-02</td><td>2026-01-10</td></tr>
+        <tr><td>Control Systems</td><td>2026-01-11</td><td>2026-01-19</td></tr>
+        <tr><td>Signals & Systems</td><td>2026-01-20</td><td>2026-01-25</td></tr>
+        <tr><td>EMF / EMI</td><td>2026-01-26</td><td>2026-01-30</td></tr>
+        <tr><td>Measurements</td><td>2026-01-31</td><td>2026-02-02</td></tr>
       </tbody>
     </table>
   </div>
@@ -178,14 +178,14 @@ details summary{background:linear-gradient(90deg,var(--accent),#36b0ff);color:#f
     <table class="table">
       <thead><tr><th>Subject</th><th>Allocated Days</th><th>Start Date</th><th>End Date</th></tr></thead>
       <tbody>
-        <tr><td>Power Systems</td><td>14</td><td>2025-11-25</td><td>2025-12-08</td></tr>
-        <tr><td>Electrical Machines</td><td>12</td><td>2025-12-09</td><td>2025-12-20</td></tr>
-        <tr><td>Networks</td><td>10</td><td>2025-12-21</td><td>2025-12-30</td></tr>
-        <tr><td>Power Electronics</td><td>8</td><td>2025-12-31</td><td>2026-01-07</td></tr>
-        <tr><td>Control Systems</td><td>8</td><td>2026-01-08</td><td>2026-01-15</td></tr>
-        <tr><td>Signals & Systems</td><td>6</td><td>2026-01-16</td><td>2026-01-21</td></tr>
-        <tr><td>EMF</td><td>6</td><td>2026-01-22</td><td>2026-01-27</td></tr>
-        <tr><td>Measurements</td><td>3</td><td>2026-01-28</td><td>2026-01-30</td></tr>
+        <tr><td>Power Systems</td><td>16</td><td>2025-11-25</td><td>2025-12-10</td></tr>
+        <tr><td>Electrical Machines</td><td>13</td><td>2025-12-11</td><td>2025-12-23</td></tr>
+        <tr><td>Networks</td><td>9</td><td>2025-12-24</td><td>2026-01-01</td></tr>
+        <tr><td>Power Electronics</td><td>9</td><td>2026-01-02</td><td>2026-01-10</td></tr>
+        <tr><td>Control Systems</td><td>9</td><td>2026-01-11</td><td>2026-01-19</td></tr>
+        <tr><td>Signals & Systems</td><td>6</td><td>2026-01-20</td><td>2026-01-25</td></tr>
+        <tr><td>EMF</td><td>5</td><td>2026-01-26</td><td>2026-01-30</td></tr>
+        <tr><td>Measurements</td><td>3</td><td>2026-01-31</td><td>2026-02-02</td></tr>
       </tbody>
     </table>
   </div>
@@ -369,7 +369,7 @@ const IMPORTANCE = {
 };
 
 /* -------------------------
-   Scheduling config: add Measurements days and distribute remaining days.
+   Scheduling config: adjusted for Option A (weightage-based allocation)
    NOTE: keep total study window unchanged; tweak numbers to include Measurements.
 ------------------------- */
 const studyStart = new Date('2025-11-25'); // inclusive
@@ -379,14 +379,14 @@ const finalRevWindowEnd = new Date('2026-02-13T00:00:00');
 const rev1OffsetDays = 10;
 
 const amplitude = {
-  'Power Systems': 14,
-  'Electrical Machines': 12,
-  'Networks': 10,
-  'Power Electronics': 8,
-  'Control Systems': 8,
+  'Power Systems': 16,
+  'Electrical Machines': 13,
+  'Networks': 9,
+  'Power Electronics': 9,
+  'Control Systems': 9,
   'Signals & Systems': 6,
-  'EMF': 6,
-  'Measurements': 3,          // <-- added schedule days for Measurements
+  'EMF': 5,
+  'Measurements': 3,
 
 };
 
